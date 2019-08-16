@@ -1,0 +1,241 @@
+body {
+font-family: 'Comfortaa', cursive;
+line-height: 1.5;
+}
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+/* helper/utility classes */
+a {
+ text-decoration: none;
+}
+
+.text-white {
+ color: var(--mainWhite);
+}
+
+.text-center {
+ text-align: center;
+}
+
+.text-primary {
+ color: var(--primaryColor);
+}
+/* clearfix */
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* globals */
+.section-center {
+  padding: 4rem 0;
+  width: 80vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.section-subtitle {
+  font-size: 2rem;
+  font-family: var(--slantedText);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+  color: var(--primaryColor);
+}
+.section-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+:root {
+--slantedText: 'Pacifico', cursive;
+--primaryColor: rgb(72, 111, 153); 
+--secondaryColor: rgb(68, 207, 203);
+--mainWhite: rgb(225,231,239);
+--mainGrey: rgb(202, 208, 211);
+--mainDark: rgb(19, 21, 22);
+--mainTransition: all .3s ease-in-out;
+--letterSpacing: .55rem;
+}
+
+.header {
+min-height: 100vh;
+background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.4)), 
+url("./img/background-main.jpeg") center/cover no-repeat fixed;
+position: relative;
+}
+
+.banner {
+position: absolute;
+top: 47%;
+left: 50%;
+text-align: center;
+transform: translate(-50%, -50%);
+letter-spacing: var(--letterSpacing);
+}
+
+.strokeme-two {
+  color: var(--primaryColor);
+  text-shadow: -2px -2px 0 var(--primaryColor);, 2.4px -2.4px 0 var(--primaryColor);, -2px 2px 0 var(--primaryColor);, 2px 2px 0 var(--primaryColor);
+}
+
+.banner-subtitle {
+font-family: var(--slantedText);
+color: var(--secondaryColor);
+font-weight: bold;
+font-size: 1.25rem;
+/* animation */
+animation: slideFromRight 5s ease-in-out 1;
+}
+
+.banner-title {
+ color: var(--mainWhite);
+text-transform: uppercase;
+font-size: 2.8rem;
+margin-top: 2.5rem;
+line-height: 1.3;
+/* animation */
+animation: slideFromLeft 5s ease-in-out 1;
+}
+
+.main-btn,
+.banner-btn {
+ margin-top: 2.5rem;
+display: inline-block;
+background: var(--primaryColor);
+text-transform: uppercase;
+padding: .8rem 1.2rem;
+color: var(--mainDark);
+font-weight: bold;
+outline: 1rem solid var(--primaryColor);
+outline-offset: 4px;
+cursor: pointer;
+transition: var(--mainTransition);
+}
+
+.main-btn:hover,
+.banner-btn:hover{
+color: var(--mainWhite);
+opacity: .65;
+}
+
+.banner-btn {
+ margin-top: 3.5rem;
+ padding: 1.2rem 1.5rem;
+ /* animation */
+ animation: show 5s ease-in-out 1;
+}
+
+/* animations */
+@keyframes show {
+ 0% {
+  transform: scale(2);
+  opacity: 0;
+ }
+ 100% {
+  transform: scale(1);
+  opacity: 1;
+ }
+}
+
+@keyframes slideFromRight {
+0% {
+ transform: translateX(-1000px)
+}
+50% {
+ transform: translateX(200px)
+}
+75% {
+ transform: translateX(-50px)
+}
+100% {
+transform: translateX(0px)
+}
+}
+
+@keyframes slideFromLeft {
+0% {
+ transform: translateX(1000px)
+}
+50% {
+ transform: translateX(-200px)
+}
+75% {
+ transform: translateX(50px)
+}
+100% {
+transform: translateX(0px)
+}
+}
+
+/* content divider */
+.content-divider {
+  height: 0.5rem;
+  background: linear-gradient(
+    to left,
+    var(--primaryColor),
+    var(--secondaryColor),
+    var(--primaryColor)
+  );
+}
+/* end of content divider */
+
+/* skills */
+
+.skills {
+ background: var(--mainGrey);
+}
+
+.skill {
+ padding: 2.5rem 0rem;
+ text-align: center;
+ transition: var(--mainTransition);
+}
+
+.skill-icon {
+font-size: 2.5rem;
+margin-bottom: 1.5rem;
+transition: var(--mainTransition);
+display: inline-block;
+}
+
+.skill-title {
+ font-size: 1.1rem;
+ font-weight: bold;
+ text-transform: uppercase;
+ letter-spacing: var(--letterSpacing);
+ margin-bottom: 1.5rem;
+ color: var(--primaryColor);
+ transition: var(--mainTransition);
+}
+
+.skill-text {
+ max-width: 13rem;
+ margin: 0 auto;
+}
+
+.skill:hover {
+ background: var(--primaryColor);
+}
+
+.skill:hover .skill-title{
+color: var(--mainWhite);
+}
+
+.skill:hover .skill-icon {
+ transform: translateY(-5px);
+}
+
+@media  screen and (min-width: 576px) {
+  .skill {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .skill {
+    width: 25%;
+  }
+}
